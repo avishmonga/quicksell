@@ -1,24 +1,47 @@
-import React, { useState } from 'react'
-import "./Counter.css"
-const Counter = () => {
-    const [value,setValue] = useState(1)
-    const [loading , setLoading] = useState(false)
+import React, { useEffect, useState } from "react";
+import "./Counter.css";
+
+import { Loader } from "./Loader";
+import CounterValue from "./CounterValue";
+const Counter = ({handleChange, value , loading}) => {
+ 
+
   return (
     <>
-    <div className='counter-wrapper'>
+      <div className="container">
+        {loading ? <Loader /> : <div className="hidden">..</div>}
+        <div className="counter-wrapper">
+          <button
+            onClick={() => {
+              handleChange(-1);
+            }}
+          >
+            -
+          </button>
+          <input
+            value={!loading && value}
+            onClick={(e)=>{
+              e.target.contentEditable = true
 
-        <button>-</button>
-        <input onClick={(e)=>{
-            e.target.readOnly = false
-
-
-        }} onChange={(e)=>{
-            console.log(e.target.value)
-        }} defaultValue={value}   readOnly  type="number" />
-        <button>+</button>
-    </div>
+            }}
+            contentEditable
+            onChange={(e) => {
+              console.log(e.target);
+            }}
+            type="number"
+          />
+          <button
+            onClick={() => {
+              handleChange(1);
+            }}
+          >
+            +
+          </button>
+        </div>
+        <CounterValue value={value} loading={loading} />
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Counter
+export default Counter;

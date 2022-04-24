@@ -1,13 +1,21 @@
-.counter-wrapper{
-    display: flex;
-    align-items: center;
+.container{
     width: 20%;
     margin: auto;
     margin-top: 15%;
     background-color: white;
-    justify-content: center;
     height: 200px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+.counter-wrapper{
+    display: flex;
+    align-items: center;
+    
+    justify-content: center;
+    
 }
 .counter-wrapper button{
     border: 1px solid #B24242;
@@ -38,4 +46,34 @@
 .counter-wrapper :nth-child(3){
     background-color: #B24242;
     color: white;
+}
+
+.loader{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    align-items: center;
+}
+
+
+.roll {
+    width: 20px;
+    margin-right: 20px;
+    border-bottom: 3px solid rgba(110,110,110);
+    height: 20px;
+    border-radius: 50%;
+    animation: roll 800ms linear infinite;
+  }
+  
+  @keyframes roll {
+    to{
+        transform: rotateZ(-360deg);
+    }
+  }
+
+.count-value{
+    margin-bottom: 5%;
+}
+.hidden{
+    visibility: hidden;
 }
