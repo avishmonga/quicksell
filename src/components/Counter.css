@@ -1,0 +1,41 @@
+.counter-wrapper{
+    display: flex;
+    align-items: center;
+    width: 20%;
+    margin: auto;
+    margin-top: 15%;
+    background-color: white;
+    justify-content: center;
+    height: 200px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.counter-wrapper button{
+    border: 1px solid #B24242;
+    background-color: white;
+    width: 60px;
+    height: 56px;
+    color: #B24242;
+    font-size: 21px;
+    font-weight:900;
+    box-sizing: border-box;
+    text-align: center;
+}
+.counter-wrapper input{
+    border: 1px solid #B24242;
+    width: 60px;
+    height: 56px;
+    box-sizing: border-box;
+    background-color: #FBE8E8;
+    color: #B24242;
+    font-size: 21px;
+    font-weight:900;
+    text-align: center;
+}
+.counter-wrapper input:focus{
+    outline: none;
+}
+
+.counter-wrapper :nth-child(3){
+    background-color: #B24242;
+    color: white;
+}
